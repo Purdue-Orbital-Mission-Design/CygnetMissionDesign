@@ -1,14 +1,14 @@
 slate
 
-objFile = 'OBJ_for_testing/deer.obj';
+objFile = 'OBJ_for_testing/deer_triangulated.obj';
 [m, C, I] = SolveMassProperties(objFile);
 
 subplot(2, 1, 1)
 current_patch = RenderObj(objFile, C);
 
-times = struct('start', 0.0, 'step', 10.0, 'stop', 1000);
+times = struct('start', 0.0, 'step', 0.1, 'stop', 10);
 massProp = struct('m', m, 'C', C, 'I', I);
-w0 = [0.001; 0.05; 0.0];
+w0 = [0.1; 5.0; 0.0];
 
 [t1, q1, w1] = IntegrateEuler(massProp, w0, times);
 prev_quat = q1(1);
@@ -46,6 +46,6 @@ end
 
 imwrite(im,map,'Eulered.gif','DelayTime',0,'LoopCount',inf) %g443800
     
-[root, ~] = GetCurrentRootAndScenario();
-TranslateModelToCenterOfMass(root, "Satellite1", C)
-SaveAttitude(t1, q1)
+% [root, ~] = GetCurrentRootAndScenario();
+% TranslateModelToCenterOfMass(root, "Satellite1", C)
+% SaveAttitude(t1, q1)
