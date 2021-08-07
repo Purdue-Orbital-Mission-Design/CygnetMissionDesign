@@ -1,0 +1,32 @@
+%   Function:   ScriptHeader
+%               
+%   Desc.:      Copies the script header template to the clipboard
+%               
+%   Author:     Liam Robinson
+%               
+%   Edit Log:   [07-Aug-2021] Liam Robinson: Created
+%               
+%   Inputs:     None
+%               
+%   Outputs:    None, although a string is copied to the user's clipboard
+
+function ScriptHeader()
+    clipboard('copy', sprintf(strcat(...
+    '%%   Script:     \n', ...
+    '%%               \n', ...
+    '%%   Use:        \n', ...
+    '%%               \n', ...
+    "%%   Author:     " + getenv("OrbitalName") + "\n", ...
+    '%%               \n', ...
+    "%%   Edit Log:   [" + date + "] " + getenv("OrbitalName") + ": Created" + "\n")))
+end
+
+% Completed Example:
+
+%   Script:     
+%               
+%   Desc.:      
+%               
+%   Author:     Liam Robinson
+%               
+%   Edit Log:   [07-Aug-2021] Liam Robinson: Created

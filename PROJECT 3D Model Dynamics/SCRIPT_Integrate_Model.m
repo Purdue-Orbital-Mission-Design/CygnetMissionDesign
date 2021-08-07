@@ -1,3 +1,15 @@
+%   Script:     SCRIPT_Integrate_Model
+%               
+%   Use:        Solves mass properties, integrates model attitude from
+%               initial conditions, plots results
+%               
+%   Author:     Liam Robinson
+%               
+%   Edit Log:   [07-Aug-2021] Liam Robinson: Created
+%               
+%   Media Out:  
+%               
+
 MaintainPath
 CleanSlate
 
