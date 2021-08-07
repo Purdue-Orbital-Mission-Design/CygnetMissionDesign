@@ -1,3 +1,0 @@
-objFile = 'OBJ_for_testing/deer_triangulated.obj';
-[m, C, I] = SolveMassProperties(objFile);
-current_patch = RenderObj(objFile, C);

@@ -1,5 +1,5 @@
-function [m, C, I] = SolveMassProperties(objFile)
-    fv = readObj(objFile);
+function [m, C, I] = SolveMassProperties(objClassification, objFile)
+    fv = readObj(strcat('3D Models/', objClassification, '/', objFile));
     I = zeros(3, 3);
     C = zeros(3, 1);
     m = 0;

@@ -1,7 +1,9 @@
-slate
+MaintainPath
+CleanSlate
 
-objFile = 'OBJ_for_testing/deer_triangulated.obj';
-[m, C, I] = SolveMassProperties(objFile);
+objFile = 'deer_triangulated.obj';
+objClassification = 'Testing Models';
+[m, C, I] = SolveMassProperties(objClassification, objFile);
 
 subplot(2, 1, 1)
 current_patch = RenderObj(objFile, C);
