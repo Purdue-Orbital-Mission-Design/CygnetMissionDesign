@@ -1,4 +1,4 @@
-function [t1, q1, w1] = IntegrateEuler(massProp, w0, times)
+function [t1, q1, w1] = IntegrateEuler(massProp, w0, times, momentfunction)
     [vecs, vals] = eig(massProp.I);
     vecs = vecs * det(vecs);
 
@@ -9,5 +9,5 @@ function [t1, q1, w1] = IntegrateEuler(massProp, w0, times)
 
     t = times.start:times.step:times.stop;
 
-    [q1, w1, t1] = PropagateEulerEq(q0, w0, I_princ, t, @(t, y) body_moment(t, y, massProp));
+    [q1, w1, t1] = PropagateEulerEq(q0, w0, I_princ, t, momentfunction(t, massProp));
 end

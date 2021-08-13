@@ -23,9 +23,9 @@ function [current_patch] = RenderObj(objName, C)
     current_patch.Vertices(:, 2) = current_patch.Vertices(:, 2) - C(2);
     current_patch.Vertices(:, 3) = current_patch.Vertices(:, 3) - C(3);
     
-    val = max(vecnorm(current_patch.Vertices'));
-    xlim([-val, val])
-    ylim([-val, val])
-    zlim([-val, val])
+    maxModelDisplacement = max(vecnorm(current_patch.Vertices'));
+    xlim([-maxModelDisplacement, maxModelDisplacement])
+    ylim([-maxModelDisplacement, maxModelDisplacement])
+    zlim([-maxModelDisplacement, maxModelDisplacement])
     grid on
 end

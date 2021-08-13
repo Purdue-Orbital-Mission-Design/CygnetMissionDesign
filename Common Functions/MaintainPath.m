@@ -22,4 +22,5 @@ function repositorySubfolders = MaintainPath()
     
     % Add that folder plus all subfolders to the path.
     addpath(genpath(repositorySubfolders));
+    savepath;
 end

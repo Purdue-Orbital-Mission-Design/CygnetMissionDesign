@@ -24,7 +24,7 @@ times = struct('start', 0.0, 'step', 0.1, 'stop', 10);
 massProp = struct('m', m, 'C', C, 'I', I);
 w0 = [0.1; 5.0; 0.0];
 
-[t1, q1, w1] = IntegrateEuler(massProp, w0, times);
+[t1, q1, w1] = IntegrateEuler(massProp, w0, times, @(t, massProp) [0, 0, 0]);
 prev_quat = q1(1);
 
 subplot(2, 1, 2)
