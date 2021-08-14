@@ -7,9 +7,5 @@ function [brightness, image] = getBrightnessOfFigure(ax1, fig2)
    
    frame = getframe();
    colimage = frame2im(frame);
-   image = rgb2gray(colimage);
-   
-   image(image == 240 | image == 210 | image == 255) = 0;
-   
-   brightness = sum(sum(image)) / numel(image) / 255;
+   brightness = getBrightnessOfImage(colimage)
 end
